@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 const IntercomMessenger = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [scriptLoaded, setScriptLoaded] = useState(false);
 
   // Function to boot Intercom with user data or as anonymous
-  const bootIntercom = (loggedIn) => {
+  const bootIntercom = useCallback((loggedIn) => {
     if (window.Intercom) {
       if (loggedIn) {
         window.Intercom('boot', {
@@ -21,7 +21,7 @@ const IntercomMessenger = () => {
         });
       }
     }
-  };
+  }, []);
 
   // Load Intercom script
   useEffect(() => {
@@ -41,7 +41,7 @@ const IntercomMessenger = () => {
       }
       document.body.removeChild(script);
     };
-  }, []);
+  }, [isLoggedIn, bootIntercom]);
 
   // Update Intercom when login state changes
   useEffect(() => {
