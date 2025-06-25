@@ -9,7 +9,7 @@ const IntercomMessenger = () => {
     if (window.Intercom) {
       if (loggedIn) {
         window.Intercom('boot', {
-          app_id: 'xy784yig',
+          app_id: 'hwusrbgs',
           name: 'Demo User',
           email: 'demo@example.com',
           created_at: Math.round(Date.now() / 1000)
