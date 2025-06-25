@@ -16,7 +16,7 @@ const IntercomMessenger = () => {
         });
       } else {
         window.Intercom('boot', {
-          app_id: 'xy784yig'
+          app_id: 'hwusrbgs'
           // No user data for anonymous visitors
         });
       }
@@ -27,7 +27,7 @@ const IntercomMessenger = () => {
   useEffect(() => {
     const script = document.createElement('script');
     script.async = true;
-    script.src = 'https://widget.intercom.io/widget/xy784yig';
+    script.src = 'https://widget.intercom.io/widget/hwusrbgs';
     script.onload = () => {
       setScriptLoaded(true);
       bootIntercom(isLoggedIn);
